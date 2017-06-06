@@ -75,7 +75,25 @@ bool HashTable::isAvailable(int pos) {
     return false;
 }
 
-bool HashTable::conta
+bool HashTable::contains(const string &s) {
+    
+    for (int i = 0; i < this->capacity; i++) {
+        if(this->HashTable::isEmpty(i)) {
+            continue;
+        }
+        
+        if(s.compare(this->table[i]) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool HashTable::contains(const char* s) {
+    const string str = s;
+    return this->HashTable::contains(str);
+}
+
 
 
 
